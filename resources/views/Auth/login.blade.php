@@ -24,7 +24,7 @@
                         <p class="white mb-0">
                             Пожалуйста, введите логин или почту и пароль.
                             <br>У вас нет уч.записи ?
-                            <a href="#" class="text-dark">Зарегистрироваться!</a>.
+                            <a href="{{route("register")}}" class="text-dark">Зарегистрироваться!</a>.
                         </p>
                     </div>
                     <div class="form-side">

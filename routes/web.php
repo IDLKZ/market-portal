@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/login', 'AuthController@login')->name('login');
+Route::get('/register', 'AuthController@register')->name('register');
+Route::post("/auth","AuthController@auth")->name("auth");
 
 
 Route::group(['middleware' => 'Admin', 'namespace' => 'Admin', 'prefix' => 'landlord'], function (){
     Route::get('/', 'AdminController@index');
-    Route::get('/logout', 'AdminController@logout');
 });
-

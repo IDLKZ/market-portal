@@ -19,32 +19,44 @@
                 <div class="card auth-card">
                     <div class="position-relative image-side ">
 
-                        <p class=" text-white h2">MAGIC IS IN THE DETAILS</p>
+                        <p class=" text-white h2">МАГИЯ В ДЕТАЛЯХ</p>
 
                         <p class="white mb-0">
-                            Please use your credentials to login.
-                            <br>If you are not a member, please
-                            <a href="#" class="white">register</a>.
+                            Уже есть аккаунт?
+                            <br>Тогда Войдите в свою учетную запись!
+                            <a href="{{route("login")}}" class="white">Вход!</a>.
                         </p>
                     </div>
                     <div class="form-side">
                         <a href="Dashboard.Default.html">
                             <span class="logo-single"></span>
                         </a>
-                        <h6 class="mb-4">Login</h6>
+                        <h6 class="mb-4">Регистрация</h6>
                         <form>
+                            <label class="form-group has-float-label mb-4">
+                                <input class="form-control" />
+                                <span>ФИО</span>
+                            </label>
                             <label class="form-group has-float-label mb-4">
                                 <input class="form-control" />
                                 <span>E-mail</span>
                             </label>
+                            <label class="form-group has-float-label mb-4">
+                                <input class="form-control" />
+                                <span>Логин</span>
+                            </label>
+                            <label class="form-group has-float-label mb-4">
+                                <input class="form-control" />
+                                <span>Телефон</span>
+                            </label>
 
                             <label class="form-group has-float-label mb-4">
                                 <input class="form-control" type="password" placeholder="" />
-                                <span>Password</span>
+                                <span>Пароль</span>
                             </label>
                             <div class="d-flex justify-content-between align-items-center">
-                                <a href="#">Forget password?</a>
-                                <button class="btn btn-primary btn-lg btn-shadow" type="submit">LOGIN</button>
+                                <a href="{{route("login")}}">Уже есть аккаунт?</a>
+                                <button class="btn btn-primary btn-lg btn-shadow" type="submit">Зарегистрироваться!</button>
                             </div>
                         </form>
                     </div>
