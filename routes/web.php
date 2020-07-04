@@ -19,4 +19,6 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'Admin', 'namespace' => 'Admin', 'prefix' => 'landlord'], function (){
     Route::get('/', 'AdminController@index');
+    Route::get('/logout', 'AdminController@logout');
 });
+
