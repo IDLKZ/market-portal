@@ -11,4 +11,8 @@ class AdminController extends Controller
     {
         return view('landlord.dashboard');
     }
+
+    public function companies(){
+        return view("landlord.companies.index");
+    }
 }

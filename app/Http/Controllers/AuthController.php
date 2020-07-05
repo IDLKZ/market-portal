@@ -39,4 +39,23 @@ class AuthController extends Controller
     {
         return view('Auth.landlord');
     }
+
+    public function logout(){
+        if(Auth::check()){
+            Auth::logout();
+            return redirect()->route("777");
+        }
+        elseif(Auth::guard("client")->check()){
+            Auth::guard("client")->logout();
+            return redirect()->route("login");
+        }
+        elseif (Auth::guard("seller")->check()){
+            Auth::guard("seller")->logout();
+            return redirect()->route("login");
+        }
+        else{
+            return redirect()->route("login");
+        }
+
+    }
 }
