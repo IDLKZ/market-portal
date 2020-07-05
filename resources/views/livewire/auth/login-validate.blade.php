@@ -25,7 +25,7 @@
                         <div>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
 
-                                    <button class="btn {{$seller}}"  wire:click="changerole('seller')"> Продавец</button>
+                                    <button class="btn {{$seller}}"  wire:click="changerole('seller')"> Продавец </button>
 
 
                                     <button class="btn {{$client}}"   wire:click="changerole('client')"  > Клиент</button>
