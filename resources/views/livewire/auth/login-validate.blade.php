@@ -7,6 +7,17 @@
             </div>
         @endif
 
+        <div class="mb-4">
+            <div>
+                <div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <button class="btn {{$seller}}" wire:click="changerole('seller')"> Продавец</button>
+                        <button class="btn {{$client}}" wire:click="changerole('client')"> Клиент</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <label class="form-group has-float-label mb-4">
             <input type="text" wire:model="login" class="form-control">
             <span>E-mail / Логин</span>
@@ -18,19 +29,6 @@
             <span>Пароль</span>
             @error('password') <span class="error">{{ $message }}</span> @enderror
         </label>
-
-        <div class="card mb-4">
-
-            <div>
-                <div>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <button class="btn {{$seller}}" wire:click="changerole('seller')"> Продавец</button>
-                        <button class="btn {{$client}}" wire:click="changerole('client')"> Клиент</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <div class="d-flex justify-content-between align-items-center">
             <button type="submit" class="btn btn-primary btn-lg btn-shadow">Вход</button>
