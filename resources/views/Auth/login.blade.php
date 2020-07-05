@@ -32,21 +32,21 @@
                             <span class="logo-single"></span>
                         </a>
                         <h6 class="mb-4">Войти</h6>
-                        <form>
+                        {!! Form::open(['route' => 'auth']) !!}
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" />
+                                {!! Form::text('login', null, ['class' => 'form-control']) !!}
                                 <span>E-mail / Логин</span>
                             </label>
 
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" type="password" placeholder="" />
+                                {!! Form::password('password', ['class' => 'form-control']) !!}
                                 <span>Пароль</span>
                             </label>
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="#">Забыли пароль?</a>
-                                <button class="btn btn-primary btn-lg btn-shadow" type="submit">Вход</button>
+                                {!! Form::submit('Вход', ['class' => 'btn btn-primary btn-lg btn-shadow']) !!}
                             </div>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
