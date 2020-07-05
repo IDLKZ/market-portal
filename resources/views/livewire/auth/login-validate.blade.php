@@ -17,7 +17,6 @@
             @error('password') <span class="error">{{ $message }}</span> @enderror
         </label>
 
-        <input type="file" wire:model="img">
         <div class="d-flex justify-content-between align-items-center">
             <button type="submit" class="btn btn-primary btn-lg btn-shadow">Вход</button>
         </div>
