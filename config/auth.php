@@ -1,5 +1,8 @@
 <?php
 
+use App\Client;
+use App\User;
+
 return [
 
     /*
@@ -46,6 +49,14 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'client' => [
+            'driver' => 'session',
+            'provider' => 'client',
+        ],
+        'seller' => [
+            'driver' => 'session',
+            'provider' => 'seller',
+        ],
     ],
 
     /*
@@ -69,6 +80,14 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'client' => [
+            'driver' => 'eloquent',
+            'model' => App\Client::class,
+        ],
+        'seller' => [
+            'driver' => 'eloquent',
+            'model' => App\Seller::class,
         ],
 
         // 'users' => [

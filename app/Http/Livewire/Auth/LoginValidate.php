@@ -9,6 +9,7 @@ class LoginValidate extends Component
 {
     public $login;
     public $password;
+    public $type;
 
     public function updated($field)
     {
@@ -26,16 +27,29 @@ class LoginValidate extends Component
         ]);
         preg_match("/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/", $this->login, $result);
         $login = !empty($result) ? 'email' : 'login';
+        switch ($this->type){
+            case "client":
+                if(Auth::guard("client")->attempt([$login => $this->login, 'password' => $this->password])){
+                    dd("client!");
+                }
+                else{
+                    session()->flash("message","Неправильный логин или пароль");
+                    return back();
+                }
+                break;
+            case "seller":
+                if(Auth::guard("seller")->attempt([$login => $this->login, 'password' => $this->password])){
+                    dd("seller!");
+                }
+                else{
+                    session()->flash("message","Неправильный логин или пароль");
+                    return back();
+                }
+                break;
+            default:
+                return redirect("login");
+            }
 
-        if (Auth::attempt([
-            $login => $this->login,
-            'password' => $this->password
-        ])){
-            return redirect('/landlord');
-        }
-        else {
-            return redirect()->route('login');
-        }
 
     }
 
