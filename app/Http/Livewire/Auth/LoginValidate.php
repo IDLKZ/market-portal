@@ -9,7 +9,7 @@ class LoginValidate extends Component
 {
     public $login;
     public $password;
-    public $type;
+    public $type = "seller";
     public $seller = "btn-default";
     public $client = "btn-success";
 
@@ -40,10 +40,11 @@ class LoginValidate extends Component
             'password' => 'required|min:6',
         ]);
 
+
         preg_match("/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/", $this->login, $result);
         $login = !empty($result) ? 'email' : 'login';
         switch ($this->type){
-            case "client" || null:
+            case "client":
                 if(Auth::guard("client")->attempt([$login => $this->login, 'password' => $this->password])){
                     dd("client!");
                 }
