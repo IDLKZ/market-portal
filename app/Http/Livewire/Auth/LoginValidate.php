@@ -9,7 +9,7 @@ class LoginValidate extends Component
 {
     public $login;
     public $password;
-    public $type = "seller";
+    public $type = "client";
     public $seller = "btn-default";
     public $client = "btn-success";
 
