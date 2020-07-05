@@ -8,28 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/login.css">
+
     @livewireStyles
+
 </head>
-{{--<style>--}}
-{{--    #exTab1 .tab-content {--}}
-{{--        color : white;--}}
-{{--        padding : 5px 15px;--}}
-{{--    }--}}
 
-{{--    #exTab2 h3 {--}}
-{{--        color : white;--}}
-{{--        padding : 5px 15px;--}}
-{{--    }--}}
-
-{{--    /* remove border radius for the tab */--}}
-
-{{--    #exTab1 .nav-pills > li > a {--}}
-{{--        border-radius: 0;--}}
-{{--    }--}}
-
-{{--    /* change border radius for the tab , apply corners on top*/--}}
-
-{{--</style>--}}
 <body class="background show-spinner">
 <div class="fixed-background"></div>
 <main>
@@ -52,7 +35,9 @@
                             <span class="logo-single"></span>
                         </a>
                         <h6 class="mb-4">Войти</h6>
+
                         @livewire('auth.login-validate')
+
                     </div>
                 </div>
             </div>
@@ -61,12 +46,13 @@
 </main>
 @livewireScripts
 <script src="js/login.js"></script>
-<script src="js/jquery.twbs-toggle-buttons.min.js"></script>
+
+
 <script>
-    $(".btn-group-toggle").twbsToggleButtons({
-        classActive: "btn-primary",
-        classInactive: "btn-default"
-    });
+
+
+
+
 </script>
 </body>
 

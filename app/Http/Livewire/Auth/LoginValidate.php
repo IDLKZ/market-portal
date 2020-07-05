@@ -10,25 +10,45 @@ class LoginValidate extends Component
     public $login;
     public $password;
     public $type;
+    public $seller = "btn-default";
+    public $client = "btn-default";
+
+    public function changerole($type){
+        $this->type = $type;
+        if($type == "seller"){
+            $this->seller = "btn-success";
+            $this->client = "btn-default";
+        }
+        if($type == "client"){
+            $this->seller = "btn-default";
+            $this->client = "btn-success";
+        }
+
+    }
 
     public function updated($field)
     {
         $this->validateOnly($field,[
             'login' => 'required',
             'password' => 'required|min:6',
+
         ]);
     }
 
     public function submit()
     {
         $this->validate([
-            'login' => 'require',
+            'login' => 'required',
             'password' => 'required|min:6',
+
+
         ]);
+        dd($this);
+
         preg_match("/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/", $this->login, $result);
         $login = !empty($result) ? 'email' : 'login';
         switch ($this->type){
-            case "client":
+            case "client" || null:
                 if(Auth::guard("client")->attempt([$login => $this->login, 'password' => $this->password])){
                     dd("client!");
                 }
