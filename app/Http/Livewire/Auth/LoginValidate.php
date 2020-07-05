@@ -11,7 +11,7 @@ class LoginValidate extends Component
     public $password;
     public $type;
     public $seller = "btn-default";
-    public $client = "btn-default";
+    public $client = "btn-success";
 
     public function changerole($type){
         $this->type = $type;
@@ -23,7 +23,6 @@ class LoginValidate extends Component
             $this->seller = "btn-default";
             $this->client = "btn-success";
         }
-
     }
 
     public function updated($field)
@@ -31,7 +30,6 @@ class LoginValidate extends Component
         $this->validateOnly($field,[
             'login' => 'required',
             'password' => 'required|min:6',
-
         ]);
     }
 
@@ -40,10 +38,7 @@ class LoginValidate extends Component
         $this->validate([
             'login' => 'required',
             'password' => 'required|min:6',
-
-
         ]);
-        dd($this);
 
         preg_match("/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/", $this->login, $result);
         $login = !empty($result) ? 'email' : 'login';
@@ -69,8 +64,6 @@ class LoginValidate extends Component
             default:
                 return redirect("login");
             }
-
-
     }
 
     public function render()
