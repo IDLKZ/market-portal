@@ -1,5 +1,10 @@
 <div>
     <form wire:submit.prevent="submit">
+        @if (session()->has('message'))
+            <div class="alert alert-info">
+                {{ session('message') }}
+            </div>
+        @endif
         <label class="form-group has-float-label mb-4">
             <input type="text" wire:model="login" class="form-control">
             <span>E-mail / Логин</span>

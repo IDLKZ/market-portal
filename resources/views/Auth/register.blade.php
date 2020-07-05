@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/login.css">
+    @livewireStyles
 </head>
 
 <body class="background show-spinner">
@@ -32,37 +33,8 @@
                             <span class="logo-single"></span>
                         </a>
                         <h6 class="mb-4">Регистрация</h6>
-                        {!! Form::open(['route' => 'save-client','enctype' => 'multipart/form-data']) !!}
-                            <label class="form-group has-float-label mb-4">
-                                {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                                <span>ФИО</span>
-                            </label>
-                            <label class="form-group has-float-label mb-4">
-                                {!! Form::email('email', null, ['class' => 'form-control']) !!}
-                                <span>E-mail</span>
-                            </label>
-                            <label class="form-group has-float-label mb-4">
-                                {!! Form::text('login', null, ['class' => 'form-control']) !!}
-                                <span>Логин</span>
-                            </label>
-                            <label class="form-group has-float-label mb-4">
-                                {!! Form::text('phone', null, ['class' => 'form-control']) !!}
-                                <span>Телефон</span>
-                            </label>
+                        @livewire('auth.register-validate')
 
-                            <label class="form-group has-float-label mb-4">
-                                {!! Form::text('password', null, ['class' => 'form-control']) !!}
-                                <span>Пароль</span>
-                            </label>
-                        <label class="form-group has-float-label mb-4">
-                            {!! Form::file('img', null, ['class' => 'form-control']) !!}
-                            <span style="top:-1.4em">Фото профиля (если есть)</span>
-                        </label>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{{route("login")}}">Уже есть аккаунт?</a>
-                                <button class="btn btn-primary btn-lg btn-shadow" type="submit">Зарегистрироваться!</button>
-                            </div>
-                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
@@ -70,6 +42,7 @@
     </div>
 </main>
 <script src="js/login.js"></script>
+@livewireScripts
 </body>
 
 </html>
