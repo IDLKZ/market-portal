@@ -32,33 +32,37 @@
                             <span class="logo-single"></span>
                         </a>
                         <h6 class="mb-4">Регистрация</h6>
-                        <form>
+                        {!! Form::open(['route' => 'save-client','enctype' => 'multipart/form-data']) !!}
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" />
+                                {!! Form::text('name', null, ['class' => 'form-control']) !!}
                                 <span>ФИО</span>
                             </label>
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" />
+                                {!! Form::email('email', null, ['class' => 'form-control']) !!}
                                 <span>E-mail</span>
                             </label>
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" />
+                                {!! Form::text('login', null, ['class' => 'form-control']) !!}
                                 <span>Логин</span>
                             </label>
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" />
+                                {!! Form::text('phone', null, ['class' => 'form-control']) !!}
                                 <span>Телефон</span>
                             </label>
 
                             <label class="form-group has-float-label mb-4">
-                                <input class="form-control" type="password" placeholder="" />
+                                {!! Form::text('password', null, ['class' => 'form-control']) !!}
                                 <span>Пароль</span>
                             </label>
+                        <label class="form-group has-float-label mb-4">
+                            {!! Form::file('img', null, ['class' => 'form-control']) !!}
+                            <span style="top:-1.4em">Фото профиля (если есть)</span>
+                        </label>
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="{{route("login")}}">Уже есть аккаунт?</a>
                                 <button class="btn btn-primary btn-lg btn-shadow" type="submit">Зарегистрироваться!</button>
                             </div>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
