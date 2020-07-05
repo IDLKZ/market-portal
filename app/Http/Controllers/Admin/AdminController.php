@@ -9,6 +9,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return 'Hello Avtondil!';
+        return view('landlord.dashboard');
     }
 }
