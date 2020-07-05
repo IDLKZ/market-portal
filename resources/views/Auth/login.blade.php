@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/login.css">
+    @livewireStyles
 </head>
 
 <body class="background show-spinner">
@@ -32,27 +33,29 @@
                             <span class="logo-single"></span>
                         </a>
                         <h6 class="mb-4">Войти</h6>
-                        {!! Form::open(['route' => 'auth']) !!}
-                            <label class="form-group has-float-label mb-4">
-                                {!! Form::text('login', null, ['class' => 'form-control']) !!}
-                                <span>E-mail / Логин</span>
-                            </label>
+{{--                        {!! Form::open(['route' => 'auth']) !!}--}}
+{{--                            <label class="form-group has-float-label mb-4">--}}
+{{--                                {!! Form::text('login', null, ['class' => 'form-control']) !!}--}}
+{{--                                <span>E-mail / Логин</span>--}}
+{{--                            </label>--}}
 
-                            <label class="form-group has-float-label mb-4">
-                                {!! Form::password('password', ['class' => 'form-control']) !!}
-                                <span>Пароль</span>
-                            </label>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="#">Забыли пароль?</a>
-                                {!! Form::submit('Вход', ['class' => 'btn btn-primary btn-lg btn-shadow']) !!}
-                            </div>
-                        {!! Form::close() !!}
+{{--                            <label class="form-group has-float-label mb-4">--}}
+{{--                                {!! Form::password('password', ['class' => 'form-control']) !!}--}}
+{{--                                <span>Пароль</span>--}}
+{{--                            </label>--}}
+{{--                            <div class="d-flex justify-content-between align-items-center">--}}
+{{--                                <a href="#">Забыли пароль?</a>--}}
+{{--                                {!! Form::submit('Вход', ['class' => 'btn btn-primary btn-lg btn-shadow']) !!}--}}
+{{--                            </div>--}}
+{{--                        {!! Form::close() !!}--}}
+                        @livewire('auth.login-validate')
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
+@livewireScripts
 <script src="js/login.js"></script>
 </body>
 

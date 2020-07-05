@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -18,20 +17,19 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function auth(Request $request)
-    {
-        preg_match("/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/", $request->get('login'), $result);
-//        dd($result);
-        $login = !empty($result) ? 'email' : 'login';
-
-        if (Auth::attempt([
-            $login => $request->get('login'),
-            'password' => $request->get('password')
-        ])){
-            return redirect('/landlord');
-        }
-        else {
-            return redirect()->route('login');
-        }
-    }
+//    public function auth(Request $request)
+//    {
+//        preg_match("/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/", $request->get('login'), $result);
+//        $login = !empty($result) ? 'email' : 'login';
+//
+//        if (Auth::attempt([
+//            $login => $request->get('login'),
+//            'password' => $request->get('password')
+//        ])){
+//            return redirect('/landlord');
+//        }
+//        else {
+//            return redirect()->route('login');
+//        }
+//    }
 }
