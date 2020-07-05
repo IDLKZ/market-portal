@@ -35,7 +35,8 @@ class AuthController extends Controller
         }
     }
 
-    public function loginseller(){
-
+    public function landlord()
+    {
+        return view('Auth.landlord');
     }
 }
