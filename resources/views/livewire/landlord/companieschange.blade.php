@@ -1,5 +1,6 @@
 {{--Modal window to change Company--}}
 <div>
+    @if(!is_null($company))
     <div class="modal-body">
         <form wire:submit.prevent="submit" enctype = 'multipart/form-data'>
             <div class="form-group">
@@ -48,4 +49,5 @@
             </div>
         </form>
     </div>
+        @endif
 </div>

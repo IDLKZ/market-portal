@@ -1,6 +1,6 @@
 {{--Company Modal--}}
 <div>
-    @if(count($data)>0)
+    @if(!is_null($data))
     <div class="tab-content">
         <div class="tab-pane show active" id="first" role="tabpanel" aria-labelledby="first-tab">
             <div class="row">

@@ -15,4 +15,9 @@ class AdminController extends Controller
     public function companies(){
         return view("landlord.companies.index");
     }
+
+    public function categories()
+    {
+        return view('landlord.categories.index');
+    }
 }

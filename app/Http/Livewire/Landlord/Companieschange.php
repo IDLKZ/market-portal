@@ -20,13 +20,18 @@ class Companieschange extends Component
     public $company_id;
 
     public function changeCompany($id){
-        $this->company = Company::find($id);
-        $this->company_name=$this->company["company_name"];
-        $this->type=$this->company["type"];
-        $this->info=$this->company["info"];
-        $this->company_id=$id;
+        if ($id){
+            $this->company = Company::find($id);
+            $this->company_name=$this->company["company_name"];
+            $this->type=$this->company["type"];
+            $this->info=$this->company["info"];
+            $this->company_id=$id;
+            $this->status=$this->company["status"];
+        }
+        else{
+            $this->company = null;
+        }
 
-        $this->status=$this->company["status"];
     }
 
     public function render()

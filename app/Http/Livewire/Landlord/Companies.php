@@ -41,7 +41,6 @@ class Companies extends Component
             "info"=>"required",
             "img"=>"sometimes|nullable|image|max:1024"
         ]);
-
         if(Company::SaveCompany($this)){
             session()->flash("message","Успешно зарегестрировались!");
 

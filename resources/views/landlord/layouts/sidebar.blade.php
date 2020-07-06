@@ -80,7 +80,7 @@
 {{--Компании--}}
             <ul class="list-unstyled" data-link="companies">
                 <li>
-                    <a href="{{route("companies")}}">
+                    <a href="{{route("landlor.companies")}}">
                         <i class="simple-icon-list"></i> Список компаний
                     </a>
                 </li>
@@ -106,7 +106,7 @@
 {{--Категории--}}
             <ul class="list-unstyled" data-link="categories">
                 <li>
-                    <a target="_blank" href="LandingPage.Home.html">
+                    <a href="{{route('landlord.categories')}}">
                         <i class="simple-icon-grid"></i> Все категории
                     </a>
                 </li>
