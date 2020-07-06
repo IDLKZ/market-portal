@@ -27,7 +27,9 @@ Route::get('/777', 'AuthController@landlord')->name('777');
 //End of Registration,Login and Logout
 
 
+
 Route::group(['middleware' => 'Admin', 'namespace' => 'Admin', 'prefix' => 'landlord'], function (){
     Route::get('/', 'AdminController@index')->name('landlord');
-    Route::get("/companies","AdminController@companies")->name("companies");
+    Route::get("/companies","AdminController@companies")->name("landlor.companies");
+    Route::get('/categories', 'AdminController@categories')->name('landlord.categories');
 });
