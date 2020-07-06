@@ -11,7 +11,7 @@
                 <input class="form-control mb-3" placeholder="Поиск..." wire:model="searchTerm">
 
                 <div class="separator mb-5"></div>
-                @if($categories > 0)
+                @if(!is_null($categories))
                 @foreach($categories as $category)
                     <div class="card d-flex flex-row mb-3">
                         <div class="d-flex flex-grow-1 min-width-zero">
