@@ -11,6 +11,7 @@ class ChangeCategory extends Component
     use WithFileUploads;
     public $title;
     public $img;
+    public $image;
     public $category_id;
 
     protected $listeners = ['category' => 'getInfo'];
@@ -27,7 +28,7 @@ class ChangeCategory extends Component
     public function getInfo($data)
     {
         $this->title = $data['title'];
-        $this->img = $data['img'];
+        $this->image = $data['img'];
         $this->category_id = $data['id'];
     }
 
@@ -49,30 +50,26 @@ class ChangeCategory extends Component
 
     public function render()
     {
-        return <<<'blade'
+                return <<<'blade'
              <form wire:submit.prevent="submit" enctype="multipart/form-data">
-                                        <div class="modal-body">
-
-                                            <div class="form-group">
-                                                <label class="text-small">Наименование</label>
-                                                <input type="text" class="form-control" wire:model="title" value="{{$title}}">
-                                                @error('title') <p class="text-danger">{{ $message }}</p> @enderror
-                                            </div>
-
-                                            <div class="form-group">
-                                                <img src="{{$img}}" width="120" height="120">
-                                                <label class="text-small">Картинка (если есть)</label>
-                                                <input type="file" value="{{$img}}" wire:model="img" class="form-control">
-                                                @error('img') <p class="text-danger">{{ $message }}</p> @enderror
-                                            </div>
-
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Отмена</button>
-                                            <button type="submit" class="btn btn-primary">Обновить</button>
-                                        </div>
-                                    </form>
-        blade;
+             <div class="modal-body">
+             <div class="form-group">
+             <label class="text-small">Наименование</label>
+             <input type="text" class="form-control" wire:model="title" value="{{$title}}">
+             @error('title') <p class="text-danger">{{ $message }}</p> @enderror
+             </div>
+             <div class="form-group">
+             <img src="{{$image}}" width="120" height="120">
+             <label class="text-small">Картинка (если есть)</label>
+             <input type="file" wire:model="img" class="form-control">
+             @error('img') <p class="text-danger">{{ $message }}</p> @enderror
+             </div>
+             </div>
+             <div class="modal-footer">
+             <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Отмена</button>
+             <button type="submit" class="btn btn-primary">Обновить</button>
+             </div>
+             </form>
+             blade;
     }
 }

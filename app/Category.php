@@ -24,7 +24,7 @@ class Category extends Model
 //        dd($data->img);
         $category = Category::find($id);
         $category->title = $data->title;
-        $img = !is_null($data->img) ? SavePhoto::updateCategoryPhoto($data) : $data->img;
+        $img = !is_null($data->img) ? SavePhoto::updateCategoryPhoto($data) : $data->image;
         $category->img = $img;
         return $category->save();
     }

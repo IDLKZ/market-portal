@@ -78,7 +78,7 @@
                     </button>
 
 
-                    <button type="button" class="btn btn-outline-primary" onclick="return confirm('Вы уверены что хотите удалить данную компанию?')"  wire:click="deleteCompany({{$company->id}})">
+                    <button type="button" class="btn btn-outline-primary" onclick="confirm('Вы уверены?') || event.stopImmediatePropagation()"  wire:click="deleteCompany({{$company->id}})">
                                 <i class="simple-icon-trash"></i>
                     </button>
 
