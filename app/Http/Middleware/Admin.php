@@ -19,6 +19,6 @@ class Admin
         if (Auth::check()){
             return $next($request);
         }
-        return redirect()->route('login');
+        return abort(404);
     }
 }

@@ -20,7 +20,7 @@
             @error('password') <span class="text-warning">{{ $message }}</span> @enderror
         </div>
         <div class="form-group">
-            <input type="submit" value="Вход" class="btn float-right login_btn">
+            <button type="submit" class="btn float-right login_btn">Вход</button>
         </div>
     </form>
 </div>
