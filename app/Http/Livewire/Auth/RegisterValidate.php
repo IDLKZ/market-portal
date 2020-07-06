@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Auth;
 
 use App\Client;
-use http\Env\Request;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -46,7 +45,6 @@ class RegisterValidate extends Component
             "img"=>"sometimes|nullable|image|max:1024"
 
         ]);
-        $conf = false;
         if(Client::SaveUser($this)){
             session()->flash("message","Успешно зарегестрировались!");
             return redirect("/login");
